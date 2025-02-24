@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Watch Video</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="index.html" class="logo">ELearning RK.</a>
+
+      <form action="#" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-2.jpg" class="image" alt="">
+         <h3 class="name">Rahul RK</h3>
+         <p class="role">Java Developer</p>
+         <a href="https://rahul-ix.github.io/LearningWithRK/profile.html" class="btn">View Profile</a>
+      </div>
+   </section>
+</header>
+
+<div class="side-bar">
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-2.jpg" class="image" alt="">
+      <h3 class="name">Rahul RK</h3>
+      <p class="role">Java Developer</p>
+      <a href="https://rahul-ix.github.io/LearningWithRK/profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="https://rahul-ix.github.io/LearningWithRK/index.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="https://rahul-ix.github.io/LearningWithRK/about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="https://rahul-ix.github.io/LearningWithRK/courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="https://rahul-ix.github.io/LearningWithRK/teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="https://rahul-ix.github.io/LearningWithRK/contact.html"></i><span>contact us</span></a>
+   </nav>
+</div>
+
+<section class="watch-video">
+
+   <div class="video-container">
+      <div class="video">
+         <!-- Video source will be set dynamically using JavaScript -->
+         <video id="video" controls poster="images/post-1-1.png"></video>
+      </div>
+      <h3 class="title" id="video-title">Complete Java Tutorial part 2</h3>
+      <div class="info">
+         <p class="date"><i class="fas fa-calendar"></i><span>24-02-2025</span></p>
+      </div>
+      <div class="tutor">
+         <img src="images/pic-2.jpg" alt="">
+         <div>
+            <h3>Rahul RK</h3>
+            <span>Java Developer</span>
+         </div>
+      </div>
+      <form action="" method="post" class="flex">
+         <a href="https://rahul-ix.github.io/LearningWithRK/profile.html" class="inline-btn">View Playlist</a>
+         <button><i class="far fa-heart"></i><span>Like</span></button>
+      </form>
+      <p class="description">
+  Rahul RK specializes in Java Development, Web Design, MySQL, and AWS. With years of experience in these fields, we deliver top-notch solutions tailored to your needs.
+
+      </p>
+   </div>
+
+</section>
+
+<script>
+// JavaScript to load the video dynamically based on the URL parameter
+window.onload = function() {
+   // Get the video file name from the URL query string
+   const urlParams = new URLSearchParams(window.location.search);
+   const videoFileName = urlParams.get('video');
+   
+   if (videoFileName) {
+      const videoElement = document.getElementById('video');
+      videoElement.src = `images/${videoFileName}`; // Set the video source dynamically
+
+      // Optionally, set the video title dynamically based on the video file
+      const videoTitle = document.getElementById('video-title');
+      videoTitle.textContent = `Complete Java Tutorial  part 2(${videoFileName.replace('.mp4', '').replace('part', 'Part')})`; // Format the title
+   }
+};
+</script>
+
+<footer class="footer">
+   &copy; copyright @ 2025 by <span>Java Developer</span> | all rights reserved!
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
